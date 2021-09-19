@@ -1,8 +1,10 @@
 import React from 'react';
 import axios from 'axios';
 import FormCom from './components/FormCom';
+import CardCom from './components/CardCom';
+import TableCom from './components/TableCom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Table from 'react-bootstrap/Table'
+import './App.css';
 
 class App extends React.Component {
 
@@ -34,32 +36,17 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <FormCom locationInfo={this.getLocInformation} />
+        
+        <div className="left-box">
+          <FormCom locationInfo={this.getLocInformation} />
 
-        {this.state.showLocInfo &&
-          <>
-            <Table striped bordered hover>
-              <tbody>
-                <tr>
-                  <td>City Name</td>
-                  <td>{this.state.searchQuery}</td>
-                </tr>
-                <tr>
-                  <td>Latitude:</td>
-                  <td>{this.state.locationResult.lat}</td>
-                </tr>
-                <tr>
-                  <td>Longitude:</td>
-                  <td>{this.state.locationResult.lon}</td>
-                </tr>
-              </tbody>
-            </Table>
-            
-            <img src={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_KEY}&center=${this.state.locationResult.lat},${this.state.locationResult.lon}&zoom=10`} alt="city" />
+          {this.state.showLocInfo && <TableCom query={this.state.searchQuery} lat={this.state.locationResult.lat} lon={this.state.locationResult.lon} />}
 
-          </>
-        }
+        </div>
 
+        <div className="right-box">
+          {this.state.showLocInfo && <CardCom locationName={this.state.searchQuery} lat={this.state.locationResult.lat} lon={this.state.locationResult.lon} />}
+        </div>
 
       </div>
     )
