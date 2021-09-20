@@ -14,7 +14,7 @@ class FormCom extends React.Component {
                         <Form.Label className="label">City Explorer App</Form.Label>
                         <Form.Control name="city" type="text" placeholder="Enter Place Name" />
                     </Form.Group>
-
+                     <p className="message">City name needs to start with uppercase!</p>
                     <Button variant="primary" type="submit">
                         Explore!
                     </Button>

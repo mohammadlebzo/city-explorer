@@ -10,7 +10,7 @@ class AlertCom extends React.Component {
 
                 <Alert show={this.props.showError} variant="success">
                     <Alert.Heading>Something went wrong in getting location data</Alert.Heading>
-                    <p>Status Code: 404</p>
+                    <p>Status Code: {this.props.message}</p>
                 </Alert>
 
             </>
