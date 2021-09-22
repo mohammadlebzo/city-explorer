@@ -10,30 +10,14 @@ class Weather extends React.Component {
             <>
                 <Table className="table" striped bordered hover>
                     <tbody>
-                        <tr>
-                            <td>{this.props.forcast.weatherData[0].date}</td>
-                            <td>{this.props.forcast.weatherData[0].description}</td>
-                        </tr>
-                        <tr>
-                            <td>{this.props.forcast.weatherData[1].date}</td>
-                            <td>{this.props.forcast.weatherData[1].description}</td>
-                        </tr>
-                        <tr>
-                            <td>{this.props.forcast.weatherData[2].date}</td>
-                            <td>{this.props.forcast.weatherData[2].description}</td>
-                        </tr>
-                        <tr>
-                            <td>{this.props.forcast.weatherData[3].date}</td>
-                            <td>{this.props.forcast.weatherData[3].description}</td>
-                        </tr>
-                        <tr>
-                            <td>{this.props.forcast.weatherData[4].date}</td>
-                            <td>{this.props.forcast.weatherData[4].description}</td>
-                        </tr>
-                        <tr>
-                            <td>{this.props.forcast.weatherData[5].date}</td>
-                            <td>{this.props.forcast.weatherData[5].description}</td>
-                        </tr>
+                        {this.props.forcast.weatherData.map(day => {
+                            return (
+                                <tr>
+                                    <td>{day.date}</td>
+                                    <td>{day.description}</td>
+                                </tr>
+                            )
+                        })}
                     </tbody>
                 </Table>
             </>
