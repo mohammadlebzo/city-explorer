@@ -39,6 +39,7 @@ class App extends React.Component {
         showLocInfo: true,
         showError: false
       })
+      // console.log(this.state.locationResult);
       // console.log(this.state.movieResult);
     } catch {
       fetch(weatherUrl)
@@ -72,7 +73,7 @@ class App extends React.Component {
         <div className='movie-cards'>
           {this.state.showLocInfo && this.state.movieResult.map(movie => {
             return(
-              <Movies movieItem={movie} />
+              <Movies movieItem={movie}/>
             )
           })}
         </div>

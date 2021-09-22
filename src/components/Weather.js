@@ -22,6 +22,18 @@ class Weather extends React.Component {
                             <td>{this.props.forcast.weatherData[2].date}</td>
                             <td>{this.props.forcast.weatherData[2].description}</td>
                         </tr>
+                        <tr>
+                            <td>{this.props.forcast.weatherData[3].date}</td>
+                            <td>{this.props.forcast.weatherData[3].description}</td>
+                        </tr>
+                        <tr>
+                            <td>{this.props.forcast.weatherData[4].date}</td>
+                            <td>{this.props.forcast.weatherData[4].description}</td>
+                        </tr>
+                        <tr>
+                            <td>{this.props.forcast.weatherData[5].date}</td>
+                            <td>{this.props.forcast.weatherData[5].description}</td>
+                        </tr>
                     </tbody>
                 </Table>
             </>
