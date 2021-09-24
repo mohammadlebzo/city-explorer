@@ -26,6 +26,7 @@ Also gets the top movies at that location.
 - 20-09-2021 10:43pm - The application can send requests and receive responses, also would alert the user when somthing wrong happen.
 - 21-09-2021 10:46pm - The application now renders the top movies at the area searched.
 - 22-09-2021 03:30pm - Refactored the weather rendering component.
+- 24-09-2021 07:35pm - The application renders the time stamp of the data retrieval.
 
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->

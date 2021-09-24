@@ -17,3 +17,7 @@ body{
   width: 60%;
   float: left;
 }
+.timeStamp{
+  font-size: 20px;
+  color: #F2B138;
+}

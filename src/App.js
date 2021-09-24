@@ -53,12 +53,24 @@ class App extends React.Component {
     }
   }
 
+  checkTimeStamp = () => {
+    console.log(this.state.locationResult.timeStamp);
+    if (this.state.locationResult.timeStamp)
+    {
+      return(<p className="timeStamp">Data Retrieved at: {this.state.locationResult.timeStamp}</p>)
+    } else {
+      return(<p className="timeStamp">New Data</p>);
+    } 
+  };
+
   render() {
     return (
       <div>
 
         <div className="left-box">
           <FormCom locationInfo={this.getLocInformation} />
+
+          {this.state.showLocInfo && this.checkTimeStamp()}
 
           {this.state.showLocInfo && <TableCom col1={['City Name', 'Latitude:', 'Longitude:']} col2={[this.state.searchQuery, this.state.locationResult.lat, this.state.locationResult.lon]} />}
           {this.state.showLocInfo && <Weather forcast={this.state.locationResult} />}
